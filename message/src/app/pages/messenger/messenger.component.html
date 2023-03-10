@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="messenger">
+        <div class="left">
+            <div class="search">
+                <input type="text" [(ngModel)]="roomId" placeholder="Nhap mã phòng">
+            </div>
+            <div class="join">
+                <button class="btn" (click)="joinRoom(roomId)">Join in</button>
+            </div>
+            
+            <div class="username">
+                <input type="text" [(ngModel)]="userName" placeholder="User name">
+            </div>
+            <div class="img-member">
+                
+            </div>
+        </div>
+        <div class="center">
+            <div class="top">
+                <div class="avatar">
+                    <img src="https://i.imgur.com/akrVIEA.png">
+                </div>
+                <div class="icon-mes">
+                    <div class="phone">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div class="video-call">
+                        <i class="bi bi-camera-video-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="between">
+                <div class="chat-box" *ngFor="let msg of messages">
+                    <p>From :{{msg.from}}</p>
+                    <p>{{msg.msg}}</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="message">
+                    <input type="text" [(ngModel)]="newMessage" placeholder="Type something.....">
+                </div>
+                <div class="send" (click)="sendMessage(newMessage)">
+                    <i class="bi bi-send-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
